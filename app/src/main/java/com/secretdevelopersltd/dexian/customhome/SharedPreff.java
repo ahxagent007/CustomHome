@@ -7,7 +7,12 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class SharedPreff {
 
+    SharedPreferences mSharedPreferences;
 
+    SharedPreff(){
+       // mSharedPreferences = getSharedPreferences("DATA", MODE_PRIVATE);
+
+    }
     /*private String getIP(){
         SharedPreferences mSharedPreferences = getSharedPreferences("IP_PORT", MODE_PRIVATE);
         return mSharedPreferences.getString("IP","192.168.10.10");
