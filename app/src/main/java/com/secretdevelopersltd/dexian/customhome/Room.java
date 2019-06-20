@@ -5,12 +5,11 @@ public class Room {
 
     private int R_ID;
     private String R_NAME;
-    private String R_DELETE;
 
-    public Room(int r_ID, String r_NAME, String r_DELETE) {
+
+    public Room(int r_ID, String r_NAME) {
         R_ID = r_ID;
         R_NAME = r_NAME;
-        R_DELETE = r_DELETE;
     }
 
     public int getR_ID() {
@@ -29,11 +28,4 @@ public class Room {
         R_NAME = r_NAME;
     }
 
-    public String getR_DELETE() {
-        return R_DELETE;
-    }
-
-    public void setR_DELETE(String r_DELETE) {
-        R_DELETE = r_DELETE;
-    }
 }

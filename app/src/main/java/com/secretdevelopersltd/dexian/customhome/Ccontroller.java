@@ -6,14 +6,18 @@ public class Ccontroller {
     private int C_ID;
     private String C_NAME;
     private String C_COMMAND;
-    private String C_DELETE;
     private int R_ID;
 
-    public Ccontroller(int c_ID, String c_NAME, String c_COMMAND, String c_DELETE, int r_ID) {
+    public Ccontroller(int c_ID, String c_NAME, String c_COMMAND, int r_ID) {
         C_ID = c_ID;
         C_NAME = c_NAME;
         C_COMMAND = c_COMMAND;
-        C_DELETE = c_DELETE;
+        R_ID = r_ID;
+    }
+
+    public Ccontroller(String c_NAME, String c_COMMAND, int r_ID) {
+        C_NAME = c_NAME;
+        C_COMMAND = c_COMMAND;
         R_ID = r_ID;
     }
 
@@ -41,13 +45,6 @@ public class Ccontroller {
         C_COMMAND = c_COMMAND;
     }
 
-    public String getR_DELETE() {
-        return C_DELETE;
-    }
-
-    public void setR_DELETE(String c_DELETE) {
-        C_DELETE = c_DELETE;
-    }
 
     public int getR_ID() {
         return R_ID;
