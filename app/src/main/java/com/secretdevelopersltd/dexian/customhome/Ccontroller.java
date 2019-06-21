@@ -7,6 +7,7 @@ public class Ccontroller {
     private String C_NAME;
     private String C_COMMAND;
     private int R_ID;
+    private String BTN_ID;
 
     public Ccontroller(int c_ID, String c_NAME, String c_COMMAND, int r_ID) {
         C_ID = c_ID;
@@ -19,6 +20,22 @@ public class Ccontroller {
         C_NAME = c_NAME;
         C_COMMAND = c_COMMAND;
         R_ID = r_ID;
+    }
+
+    public Ccontroller(int c_ID, String c_NAME, String c_COMMAND, int r_ID, String BTN_ID) {
+        C_ID = c_ID;
+        C_NAME = c_NAME;
+        C_COMMAND = c_COMMAND;
+        R_ID = r_ID;
+        this.BTN_ID = BTN_ID;
+    }
+
+    public String getBTN_ID() {
+        return BTN_ID;
+    }
+
+    public void setBTN_ID(String BTN_ID) {
+        this.BTN_ID = BTN_ID;
     }
 
     public int getC_ID() {

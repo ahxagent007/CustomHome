@@ -52,15 +52,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:weightSum="5"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:text="Home Controll"
+                    android:text="Room List"
                     android:textSize="25dp"
                     android:textColor="#E3F2FD"
                     android:textStyle="bold"
@@ -99,30 +100,32 @@
                                 android:orientation="horizontal">
 
                                 <Button
-                                    android:id="@+id/btn_lock"
+                                    android:id="@+id/btn_room00"
                                     android:layout_width="100dp"
                                     android:layout_height="100dp"
                                     android:layout_margin="10dp"
                                     android:background="@drawable/btn_pressed"
-                                    android:text="Light"
+                                    android:text="ROOM 01"
                                     android:textSize="20dp"
                                     android:textStyle="bold"/>
 
                                 <Button
+                                    android:id="@+id/btn_room01"
                                     android:layout_width="100dp"
                                     android:layout_height="100dp"
                                     android:background="@drawable/btn_pressed"
                                     android:layout_margin="10dp"
-                                    android:text="Fan"
+                                    android:text="ROOM 02"
                                     android:textSize="20dp"
                                     android:textStyle="bold"/>
 
                                 <Button
+                                    android:id="@+id/btn_room02"
                                     android:layout_width="100dp"
                                     android:layout_height="100dp"
                                     android:background="@drawable/btn_pressed"
                                     android:layout_margin="10dp"
-                                    android:text="TV"
+                                    android:text="ROOM 03"
                                     android:textSize="20dp"
                                     android:textStyle="bold"/>
 
@@ -156,22 +159,34 @@
                                 android:orientation="horizontal">
 
                                 <Button
+                                    android:id="@+id/btn_room10"
                                     android:layout_width="100dp"
                                     android:layout_height="100dp"
                                     android:background="@drawable/btn_pressed"
-                                    android:layout_margin="10dp"/>
+                                    android:layout_margin="10dp"
+                                    android:text="ROOM 04"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold"/>
 
                                 <Button
+                                    android:id="@+id/btn_room11"
                                     android:layout_width="100dp"
                                     android:layout_height="100dp"
                                     android:background="@drawable/btn_pressed"
-                                    android:layout_margin="10dp"/>
+                                    android:layout_margin="10dp"
+                                    android:text="ROOM 05"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold"/>
 
                                 <Button
+                                    android:id="@+id/btn_room12"
                                     android:layout_width="100dp"
                                     android:layout_height="100dp"
                                     android:background="@drawable/btn_pressed"
-                                    android:layout_margin="10dp"/>
+                                    android:layout_margin="10dp"
+                                    android:text="ROOM 06"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold"/>
 
 
 
@@ -189,8 +204,189 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:weightSum="5"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/TV_SwitchBoard"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="Room 01 Switch Board"
+                    android:textSize="25dp"
+                    android:textColor="#E3F2FD"
+                    android:textStyle="bold"
+                    android:padding="5dp"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="4"
+                    android:background="@color/colorBG"
+                    android:orientation="vertical"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center">
+                        <HorizontalScrollView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:fillViewport="true"
+                            android:measureAllChildren="false"
+                            android:scrollbars="none"
+                            >
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <Button
+                                    android:id="@+id/btn_switch00"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:background="@drawable/btn_pressed"
+                                    android:layout_margin="10dp"
+                                    android:text="FAN"
+                                    android:textSize="14dp"
+                                    android:textStyle="bold"
+                                    />
+
+                                <Button
+                                    android:id="@+id/btn_switch01"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:background="@drawable/btn_pressed"
+                                    android:layout_margin="10dp"
+                                    android:text="Light"
+                                    android:textSize="14dp"
+                                    android:textStyle="bold"
+                                    />
+
+
+                                <Button
+                                    android:id="@+id/btn_switch02"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:background="@drawable/btn_pressed"
+                                    android:layout_margin="10dp"
+                                    android:text="light2"
+                                    android:textSize="14dp"
+                                    android:textStyle="bold"
+                                    />
+
+                                <Button
+                                    android:id="@+id/btn_switch03"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:background="@drawable/btn_pressed"
+                                    android:layout_margin="10dp"
+                                    android:text="light3"
+                                    android:textSize="14dp"
+                                    android:textStyle="bold"
+                                    />
+
+
+                            </LinearLayout>
+
+                        </HorizontalScrollView>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center">
+                        <HorizontalScrollView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:fillViewport="true"
+                            android:measureAllChildren="false"
+                            android:scrollbars="none"
+                            >
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <Button
+                                    android:id="@+id/btn_switch10"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:background="@drawable/btn_pressed"
+                                    android:layout_margin="10dp"
+                                    android:textSize="14dp"
+                                    android:text="TV"
+                                    android:textStyle="bold"
+                                    />
+
+                                <Button
+
+                                    android:id="@+id/btn_switch11"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:background="@drawable/btn_pressed"
+                                    android:layout_margin="10dp"
+                                    android:textSize="14dp"
+                                    android:text="fridge"
+                                    android:textStyle="bold"
+                                    />
+
+
+                                <Button
+                                    android:id="@+id/btn_switch12"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:background="@drawable/btn_pressed"
+                                    android:layout_margin="10dp"
+                                    android:textSize="14dp"
+                                    android:text="AC"
+                                    android:textStyle="bold"
+                                    />
+
+                                <Button
+                                    android:id="@+id/btn_switch13"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:background="@drawable/btn_pressed"
+                                    android:layout_margin="10dp"
+                                    android:textSize="14dp"
+                                    android:text="RADIO"
+                                    android:textStyle="bold"
+                                    />
+
+
+
+                            </LinearLayout>
+
+                        </HorizontalScrollView>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
 
         </LinearLayout>
+
+
+
+
     </ScrollView>
 
 

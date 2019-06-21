@@ -30,6 +30,10 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String COLUMN_RID = "RID";
     private static final String COLUM_RNAME = "R_NAME";
 
+    private static final String COLUM_BTN_ID = "BTN_ID";
+
+
+
 
     public DBHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -47,15 +51,16 @@ public class DBHandler extends SQLiteOpenHelper {
 
                     COLUMN_CNAME + " VARCHAR(255)," +
                     COLUM_CCOMMAND + " VARCHAR(255)," +
-                    COLUMN_RID + " INTEGER)";
+                    COLUMN_RID + " INTEGER," +
+                    COLUM_BTN_ID+" VARCHAR(255))";
 
             db.execSQL(query);
 
             //Secound table
             query = "CREATE TABLE " +  TABLE_ROOM
                     +" ( " + COLUMN_RID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-
-                    COLUM_RNAME + " VARCHAR(255))";
+                    COLUM_RNAME + " VARCHAR(255)," +
+                    COLUM_BTN_ID+ " VARCHAR(255))";
 
             db.execSQL(query);
 
@@ -90,6 +95,7 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(COLUMN_CNAME, ccontroller.getC_NAME());
         values.put(COLUM_CCOMMAND, ccontroller.getC_COMMAND());
         values.put(COLUMN_RID, ccontroller.getR_ID());
+        values.put(COLUM_BTN_ID, ccontroller.getBTN_ID());
 
         SQLiteDatabase db = getWritableDatabase();
         db.insert(TABLE_CONTROLER,null,values);
@@ -102,11 +108,14 @@ public class DBHandler extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
 
         values.put(COLUM_RNAME, room.getR_NAME());
+        values.put(COLUM_BTN_ID, room.getBTN_ID());
 
         SQLiteDatabase db = getWritableDatabase();
         db.insert(TABLE_ROOM,null,values);
 
         db.close();
+
+        Log.i(TAG,"ROOM ADDED: "+room.getR_NAME()+" "+room.getBTN_ID());
     }
 
 
@@ -201,8 +210,9 @@ public class DBHandler extends SQLiteOpenHelper {
         String name = c.getString(c.getColumnIndex(COLUMN_CNAME));
         String comand = c.getString(c.getColumnIndex(COLUM_CCOMMAND));
         int RID = c.getInt(c.getColumnIndex(COLUMN_RID));
+        String BTN_ID = c.getString(c.getColumnIndex(COLUM_BTN_ID));
 
-        Ccontroller ccontroller = new Ccontroller(Controller_ID, name, comand, RID);
+        Ccontroller ccontroller = new Ccontroller(Controller_ID, name, comand, RID, BTN_ID);
 
 
         db.close();
@@ -224,8 +234,9 @@ public class DBHandler extends SQLiteOpenHelper {
 
         int Room_ID = c.getInt(c.getColumnIndex(COLUMN_RID));
         String name = c.getString(c.getColumnIndex(COLUM_RNAME));
+        String BTN_ID = c.getString(c.getColumnIndex(COLUM_BTN_ID));
 
-        Room room = new Room(Room_ID, name);
+        Room room = new Room(Room_ID, name, BTN_ID);
 
 
         db.close();
@@ -261,6 +272,7 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(COLUMN_CNAME, c.getC_NAME());
         values.put(COLUM_CCOMMAND, c.getC_COMMAND());
         values.put(COLUMN_RID, c.getR_ID());
+        values.put(COLUM_BTN_ID, c.getBTN_ID());
 
         SQLiteDatabase db = getWritableDatabase();
 
@@ -298,8 +310,9 @@ public class DBHandler extends SQLiteOpenHelper {
                     String name = c.getString(c.getColumnIndex(COLUMN_CNAME));
                     String comand = c.getString(c.getColumnIndex(COLUM_CCOMMAND));
                     int RID = c.getInt(c.getColumnIndex(COLUMN_RID));
+                    String BTN_ID = c.getString(c.getColumnIndex(COLUM_BTN_ID));
 
-                    Ccontroller ccontroller = new Ccontroller(Controller_ID, name, comand, RID);
+                    Ccontroller ccontroller = new Ccontroller(Controller_ID, name, comand, RID, BTN_ID);
 
 
                     ControllerList.add(ccontroller);
@@ -326,25 +339,27 @@ public class DBHandler extends SQLiteOpenHelper {
         Cursor c = db.rawQuery(query,null);
 
         //move to the very first in Database
-        c.moveToFirst();
+        //c.moveToFirst();
 
-        if(!c.isBeforeFirst()){
-            do{
+        Log.i(TAG, "ROOM COUNT = "+c.getCount());
+        if(c.getCount()>0){
+            while(c.moveToNext()){
+                if(c.getString(c.getColumnIndex(COLUMN_RID))!= null){
 
-                if(c.getString(c.getColumnIndex(COLUMN_CID))!= null){
+                    int Room_id = c.getInt(c.getColumnIndex(COLUMN_RID));
+                    String name = c.getString(c.getColumnIndex(COLUM_RNAME));
+                    String BTN_ID = c.getString(c.getColumnIndex(COLUM_BTN_ID));
 
-                    int Room_id = c.getInt(c.getColumnIndex(COLUMN_CID));
-                    String name = c.getString(c.getColumnIndex(COLUMN_CNAME));
+                    Room room = new Room(Room_id, name, BTN_ID);
 
-                    Room room = new Room(Room_id, name);
-
+                    Log.i(TAG,"ROOM ALL : "+room.getR_ID()+" "+room.getR_NAME()+" "+room.getBTN_ID());
 
                     RoomList.add(room);
 
                 }
-
-            }while(c.moveToNext());
+            }
         }
+
 
         db.close();
 
@@ -374,8 +389,9 @@ public class DBHandler extends SQLiteOpenHelper {
                     String name = c.getString(c.getColumnIndex(COLUMN_CNAME));
                     String comand = c.getString(c.getColumnIndex(COLUM_CCOMMAND));
                     int room_ID = c.getInt(c.getColumnIndex(COLUMN_RID));
+                    String BTN_ID = c.getString(c.getColumnIndex(COLUM_BTN_ID));
 
-                    Ccontroller ccontroller = new Ccontroller(Controller_ID, name, comand, room_ID);
+                    Ccontroller ccontroller = new Ccontroller(Controller_ID, name, comand, room_ID, BTN_ID);
 
                     ControllerList.add(ccontroller);
 

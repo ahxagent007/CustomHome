@@ -1,5 +1,6 @@
 package com.secretdevelopersltd.dexian.customhome;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -34,10 +35,16 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.setting:
                         //your code
                         // EX : call intent if you want to swich to other activity
+
+                        startActivity(new Intent(getApplicationContext(), Setting.class));
+
                         Log.i(TAG,"setting");
                         return true;
                     case R.id.about:
                         Log.i(TAG,"about");
+
+                        startActivity(new Intent(getApplicationContext(), About.class));
+
                         //your code
                         return true;
                     default:

@@ -6,59 +6,389 @@
     android:layout_height="match_parent"
     tools:context=".Setting"
     android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/colorBG"
    >
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Setting"
-        android:textStyle="bold"
-        android:textColor="#FFF"
-        android:gravity="center"
-        android:textSize="25dp"
-        android:background="@color/colorPrimaryDark"
-        android:padding="5dp"
-        />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:layout_height="50dp"
+        android:background="@color/colorPrimaryDark"
+        android:weightSum="6">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Receiver Mobile Number"
-            android:paddingLeft="20dp"
-            android:textStyle="bold"
-            android:textSize="15dp"
-            android:textColor="@color/colorPrimary"/>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorPrimary"/>
-
-        <EditText
-            android:id="@+id/ET_settingPhonenumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="01XXXXXXXXX"
+            android:layout_width="305dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
             android:gravity="center"
-            android:textColor="@color/colorPrimaryDark"/>
+            android:text="Settings"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp"
+            android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btn_settingSave"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/btn_pressed"
-            android:text="Save"
-            android:textColor="#000000"
-            android:textStyle="bold"
-            android:layout_margin="20dp"/>
-
+        <ImageView
+            android:id="@+id/IV_SettingMenu"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/menu_icon"
+            android:layout_weight="1"
+            android:padding="3dp"
+            android:layout_gravity="center"
+            android:onClick="showPopupSetting"/>
 
     </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="2"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:weightSum="5"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="Room List"
+                    android:textSize="25dp"
+                    android:textColor="#E3F2FD"
+                    android:textStyle="bold"
+                    android:padding="5dp"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="4"
+                    android:background="@color/colorBG"
+                    android:orientation="vertical"
+                    android:weightSum="2"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_margin="5dp">
+
+                        <HorizontalScrollView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:fillViewport="true"
+                            android:measureAllChildren="false"
+                            android:scrollbars="none"
+                            >
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <Button
+                                    android:id="@+id/btn_room00"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_margin="10dp"
+                                    android:background="@drawable/btn_pressed"
+                                    android:text="+"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold"/>
+
+                                <Button
+                                    android:id="@+id/btn_room01"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:background="@drawable/btn_pressed"
+                                    android:layout_margin="10dp"
+                                    android:text="+"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold"/>
+
+                                <Button
+                                    android:id="@+id/btn_room02"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:background="@drawable/btn_pressed"
+                                    android:layout_margin="10dp"
+                                    android:text="+"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold"/>
+
+
+
+
+                            </LinearLayout>
+
+                        </HorizontalScrollView>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_margin="5dp">
+
+                        <HorizontalScrollView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:fillViewport="true"
+                            android:measureAllChildren="false"
+                            android:scrollbars="none"
+                            >
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <Button
+                                    android:id="@+id/btn_room10"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:background="@drawable/btn_pressed"
+                                    android:layout_margin="10dp"
+                                    android:text="+"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold"/>
+
+                                <Button
+                                    android:id="@+id/btn_room11"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:background="@drawable/btn_pressed"
+                                    android:layout_margin="10dp"
+                                    android:text="+"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold"/>
+
+                                <Button
+                                    android:id="@+id/btn_room12"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:background="@drawable/btn_pressed"
+                                    android:layout_margin="10dp"
+                                    android:text="+"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold"/>
+
+
+
+
+                            </LinearLayout>
+
+                        </HorizontalScrollView>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:weightSum="5"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/TV_SwitchBoard"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="ROOM 01 Switch Board"
+                    android:textSize="25dp"
+                    android:textColor="#E3F2FD"
+                    android:textStyle="bold"
+                    android:padding="5dp"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="4"
+                    android:background="@color/colorBG"
+                    android:orientation="vertical"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center">
+                        <HorizontalScrollView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:fillViewport="true"
+                            android:measureAllChildren="false"
+                            android:scrollbars="none"
+                            >
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <Button
+                                    android:id="@+id/btn_switch00"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:background="@drawable/btn_pressed"
+                                    android:layout_margin="10dp"
+                                    android:text="+"
+                                    android:textSize="14dp"
+                                    android:textStyle="bold"
+                                    />
+
+                                <Button
+                                    android:id="@+id/btn_switch01"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:background="@drawable/btn_pressed"
+                                    android:layout_margin="10dp"
+                                    android:text="+"
+                                    android:textSize="14dp"
+                                    android:textStyle="bold"
+                                    />
+
+
+                                <Button
+                                    android:id="@+id/btn_switch02"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:background="@drawable/btn_pressed"
+                                    android:layout_margin="10dp"
+                                    android:text="+"
+                                    android:textSize="14dp"
+                                    android:textStyle="bold"
+                                    />
+
+                                <Button
+                                    android:id="@+id/btn_switch03"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:background="@drawable/btn_pressed"
+                                    android:layout_margin="10dp"
+                                    android:text="+"
+                                    android:textSize="14dp"
+                                    android:textStyle="bold"
+                                    />
+
+
+                            </LinearLayout>
+
+                        </HorizontalScrollView>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center">
+                        <HorizontalScrollView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:fillViewport="true"
+                            android:measureAllChildren="false"
+                            android:scrollbars="none"
+                            >
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <Button
+                                    android:id="@+id/btn_switch10"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:background="@drawable/btn_pressed"
+                                    android:layout_margin="10dp"
+                                    android:textSize="14dp"
+                                    android:text="+"
+                                    android:textStyle="bold"
+                                    />
+
+                                <Button
+
+                                    android:id="@+id/btn_switch11"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:background="@drawable/btn_pressed"
+                                    android:layout_margin="10dp"
+                                    android:textSize="14dp"
+                                    android:text="+"
+                                    android:textStyle="bold"
+                                    />
+
+
+                                <Button
+                                    android:id="@+id/btn_switch12"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:background="@drawable/btn_pressed"
+                                    android:layout_margin="10dp"
+                                    android:textSize="14dp"
+                                    android:text="+"
+                                    android:textStyle="bold"
+                                    />
+
+                                <Button
+                                    android:id="@+id/btn_switch13"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:background="@drawable/btn_pressed"
+                                    android:layout_margin="10dp"
+                                    android:textSize="14dp"
+                                    android:text="+"
+                                    android:textStyle="bold"
+                                    />
+
+
+
+                            </LinearLayout>
+
+                        </HorizontalScrollView>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+    </ScrollView>
 
 
 

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/colorBG"
+    android:padding="20dp">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Add Room"
+        android:textSize="25dp"
+        android:textColor="#E3F2FD"
+        android:textStyle="bold"
+        android:padding="5dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"/>
+
+    <EditText
+        android:id="@+id/ET_RoomName"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Room Name"
+        android:gravity="center"
+        android:textColor="#000000"/>
+
+    <Button
+        android:id="@+id/btn_roomSave"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:background="@drawable/btn_pressed"
+        android:text="SAVE"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+
+</LinearLayout>
