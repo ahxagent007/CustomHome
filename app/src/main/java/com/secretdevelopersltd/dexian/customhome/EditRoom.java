@@ -49,6 +49,7 @@ public class EditRoom extends AppCompatActivity {
 
                 Room r = new Room(0, name, ""+ BTN_ID);
 
+                DBH.deteleRoomByBTNid(""+BTN_ID);
                 DBH.AddRoom(r);
 
                 Dialog.cancel();

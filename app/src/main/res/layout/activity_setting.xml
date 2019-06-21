@@ -108,7 +108,8 @@
                                     android:background="@drawable/btn_pressed"
                                     android:text="+"
                                     android:textSize="20dp"
-                                    android:textStyle="bold"/>
+                                    android:textStyle="bold"
+                                    android:onClick="onClickRoom"/>
 
                                 <Button
                                     android:id="@+id/btn_room01"
@@ -118,7 +119,8 @@
                                     android:layout_margin="10dp"
                                     android:text="+"
                                     android:textSize="20dp"
-                                    android:textStyle="bold"/>
+                                    android:textStyle="bold"
+                                    android:onClick="onClickRoom"/>
 
                                 <Button
                                     android:id="@+id/btn_room02"
@@ -128,7 +130,8 @@
                                     android:layout_margin="10dp"
                                     android:text="+"
                                     android:textSize="20dp"
-                                    android:textStyle="bold"/>
+                                    android:textStyle="bold"
+                                    android:onClick="onClickRoom"/>
 
 
 
@@ -167,7 +170,8 @@
                                     android:layout_margin="10dp"
                                     android:text="+"
                                     android:textSize="20dp"
-                                    android:textStyle="bold"/>
+                                    android:textStyle="bold"
+                                    android:onClick="onClickRoom"/>
 
                                 <Button
                                     android:id="@+id/btn_room11"
@@ -177,7 +181,8 @@
                                     android:layout_margin="10dp"
                                     android:text="+"
                                     android:textSize="20dp"
-                                    android:textStyle="bold"/>
+                                    android:textStyle="bold"
+                                    android:onClick="onClickRoom"/>
 
                                 <Button
                                     android:id="@+id/btn_room12"
@@ -187,7 +192,8 @@
                                     android:layout_margin="10dp"
                                     android:text="+"
                                     android:textSize="20dp"
-                                    android:textStyle="bold"/>
+                                    android:textStyle="bold"
+                                    android:onClick="onClickRoom"/>
 
 
 
@@ -261,6 +267,7 @@
                                     android:text="+"
                                     android:textSize="14dp"
                                     android:textStyle="bold"
+                                    android:onClick="onClickController"
                                     />
 
                                 <Button
@@ -272,6 +279,7 @@
                                     android:text="+"
                                     android:textSize="14dp"
                                     android:textStyle="bold"
+                                    android:onClick="onClickController"
                                     />
 
 
@@ -284,6 +292,7 @@
                                     android:text="+"
                                     android:textSize="14dp"
                                     android:textStyle="bold"
+                                    android:onClick="onClickController"
                                     />
 
                                 <Button
@@ -295,6 +304,7 @@
                                     android:text="+"
                                     android:textSize="14dp"
                                     android:textStyle="bold"
+                                    android:onClick="onClickController"
                                     />
 
 
@@ -331,6 +341,7 @@
                                     android:textSize="14dp"
                                     android:text="+"
                                     android:textStyle="bold"
+                                    android:onClick="onClickController"
                                     />
 
                                 <Button
@@ -343,6 +354,7 @@
                                     android:textSize="14dp"
                                     android:text="+"
                                     android:textStyle="bold"
+                                    android:onClick="onClickController"
                                     />
 
 
@@ -355,6 +367,7 @@
                                     android:textSize="14dp"
                                     android:text="+"
                                     android:textStyle="bold"
+                                    android:onClick="onClickController"
                                     />
 
                                 <Button
@@ -366,6 +379,7 @@
                                     android:textSize="14dp"
                                     android:text="+"
                                     android:textStyle="bold"
+                                    android:onClick="onClickController"
                                     />
 
 

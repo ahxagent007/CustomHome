@@ -11,9 +11,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.PopupMenu;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Setting extends AppCompatActivity {
 
@@ -21,6 +23,12 @@ public class Setting extends AppCompatActivity {
 
 
     private Button btn_room00, btn_room01, btn_room02, btn_room10, btn_room11, btn_room12;
+    private TextView TV_SwitchBoard;
+
+    private HashMap<String, Room> roomBTNid;
+    private HashMap<String, Ccontroller> controllerBTNid;
+
+    private DBHandler DBH;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +39,23 @@ public class Setting extends AppCompatActivity {
 
         loadRoomList();
 
+
+    }
+
+    private void initialWorks(){
+
+        btn_room00 = findViewById(R.id.btn_room00);
+        btn_room01 = findViewById(R.id.btn_room01);
+        btn_room02 = findViewById(R.id.btn_room02);
+        btn_room10 = findViewById(R.id.btn_room10);
+        btn_room11 = findViewById(R.id.btn_room11);
+        btn_room12 = findViewById(R.id.btn_room12);
+        TV_SwitchBoard = findViewById(R.id.TV_SwitchBoard);
+
+        DBH = new DBHandler(getApplicationContext());
+
+        roomBTNid = new HashMap<String, Room>();
+        controllerBTNid = new HashMap<String, Ccontroller>();
 
     }
 
@@ -69,9 +94,8 @@ public class Setting extends AppCompatActivity {
 
     private void loadRoomList(){
 
-        DBHandler DBH = new DBHandler(getApplicationContext());
-
         ArrayList<Room> roomList = DBH.getAllRoom();
+        roomBTNid = new HashMap<String, Room>();
 
         for(int i=0;i<roomList.size();i++){
 
@@ -79,19 +103,51 @@ public class Setting extends AppCompatActivity {
 
             tempButton.setText(roomList.get(i).getR_NAME());
 
+
+            roomBTNid.put(""+roomList.get(i).getBTN_ID(), roomList.get(i));
+
         }
 
     }
 
-    private void initialWorks(){
 
-        btn_room00 = findViewById(R.id.btn_room00);
-        btn_room01 = findViewById(R.id.btn_room01);
-        btn_room02 = findViewById(R.id.btn_room02);
-        btn_room10 = findViewById(R.id.btn_room10);
-        btn_room11 = findViewById(R.id.btn_room11);
-        btn_room12 = findViewById(R.id.btn_room12);
 
+    public void onClickRoom(View view){
+
+        Button tempBTN = findViewById(view.getId());
+
+        if(tempBTN.getText() != "+"){
+
+            TV_SwitchBoard.setText(roomBTNid.get(""+view.getId()).getR_NAME()+" Switch Board");
+            loadControllers(view.getId());
+
+        }
+
+    }
+
+    public void onClickController(View view){
+
+        Toast.makeText(getApplicationContext(), ""+view.getId(), Toast.LENGTH_SHORT).show();
+
+    }
+
+    private void loadControllers(int BTN_ID){
+
+        ArrayList<Ccontroller> controllersList = new ArrayList<Ccontroller>();
+        controllerBTNid = new HashMap<String, Ccontroller>();
+
+        controllersList = DBH.getAllControllerByRoomID(roomBTNid.get(""+BTN_ID).getR_ID());
+
+        for(int i=0;i<controllersList.size();i++){
+
+            Button tempButton = findViewById(Integer.parseInt(controllersList.get(i).getBTN_ID()));
+
+            tempButton.setText(controllersList.get(i).getC_NAME());
+
+            controllerBTNid.put(""+BTN_ID, controllersList.get(i));
+
+
+        }
 
     }
 
