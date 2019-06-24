@@ -8,12 +8,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class EditRoom extends AppCompatActivity {
+
+    private HashMap<String, Room> roomBTNid;
+
+    private DBHandler DBH;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_room);
+
+        initialWorks();
+        loadRoomList();
     }
 
     public void pressed(View view) {
@@ -21,6 +31,14 @@ public class EditRoom extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),""+view.getId(),Toast.LENGTH_LONG).show();
         showAddRoom(view.getId());
 
+
+    }
+
+    private void initialWorks(){
+
+        DBH = new DBHandler(getApplicationContext());
+
+        roomBTNid = new HashMap<String, Room>();
 
     }
 
@@ -49,11 +67,29 @@ public class EditRoom extends AppCompatActivity {
 
                 Room r = new Room(0, name, ""+ BTN_ID);
 
-                DBH.deteleRoomByBTNid(""+BTN_ID);
+                DBH.deleteRoomByBTNid(""+BTN_ID);
                 DBH.AddRoom(r);
 
                 Dialog.cancel();
             }
         });
+    }
+
+    private void loadRoomList(){
+
+        ArrayList<Room> roomList = DBH.getAllRoom();
+        roomBTNid = new HashMap<String, Room>();
+
+        for(int i=0;i<roomList.size();i++){
+
+            Button tempButton = findViewById(Integer.parseInt(roomList.get(i).getBTN_ID()));
+
+            tempButton.setText(roomList.get(i).getR_NAME());
+
+
+            roomBTNid.put(""+roomList.get(i).getBTN_ID(), roomList.get(i));
+
+        }
+
     }
 }

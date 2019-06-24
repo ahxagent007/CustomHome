@@ -259,11 +259,24 @@ public class DBHandler extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void deteleRoomByBTNid(String BTN_ID ){
+    public void deleteRoomByBTNid(String BTN_ID ){
 
         SQLiteDatabase db = getWritableDatabase();
 
-        String query = "DELETE * FROM "+ TABLE_ROOM + " WHERE "+COLUM_BTN_ID +" = "+ BTN_ID;
+        String query = "DELETE FROM "+ TABLE_ROOM + " WHERE "+COLUM_BTN_ID +" = "+ BTN_ID;
+
+        //Cursor point the location in the database
+        Cursor c = db.rawQuery(query,null);
+
+        db.close();
+
+    }
+
+    public void deleteControllerByBTNid(int R_ID , String BTN_ID ){
+
+        SQLiteDatabase db = getWritableDatabase();
+
+        String query = "DELETE FROM "+ TABLE_CONTROLER + " WHERE "+COLUM_BTN_ID +" = "+ BTN_ID +" AND "+COLUMN_RID +" = "+R_ID;
 
         //Cursor point the location in the database
         Cursor c = db.rawQuery(query,null);

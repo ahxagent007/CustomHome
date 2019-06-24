@@ -105,9 +105,10 @@
                                     android:layout_height="100dp"
                                     android:layout_margin="10dp"
                                     android:background="@drawable/btn_pressed"
-                                    android:text="ROOM 01"
+                                    android:text="+"
                                     android:textSize="20dp"
-                                    android:textStyle="bold"/>
+                                    android:textStyle="bold"
+                                    android:onClick="onClickRoom"/>
 
                                 <Button
                                     android:id="@+id/btn_room01"
@@ -115,9 +116,10 @@
                                     android:layout_height="100dp"
                                     android:background="@drawable/btn_pressed"
                                     android:layout_margin="10dp"
-                                    android:text="ROOM 02"
+                                    android:text="+"
                                     android:textSize="20dp"
-                                    android:textStyle="bold"/>
+                                    android:textStyle="bold"
+                                    android:onClick="onClickRoom"/>
 
                                 <Button
                                     android:id="@+id/btn_room02"
@@ -125,9 +127,10 @@
                                     android:layout_height="100dp"
                                     android:background="@drawable/btn_pressed"
                                     android:layout_margin="10dp"
-                                    android:text="ROOM 03"
+                                    android:text="+"
                                     android:textSize="20dp"
-                                    android:textStyle="bold"/>
+                                    android:textStyle="bold"
+                                    android:onClick="onClickRoom"/>
 
 
 
@@ -164,9 +167,10 @@
                                     android:layout_height="100dp"
                                     android:background="@drawable/btn_pressed"
                                     android:layout_margin="10dp"
-                                    android:text="ROOM 04"
+                                    android:text="+"
                                     android:textSize="20dp"
-                                    android:textStyle="bold"/>
+                                    android:textStyle="bold"
+                                    android:onClick="onClickRoom"/>
 
                                 <Button
                                     android:id="@+id/btn_room11"
@@ -174,9 +178,10 @@
                                     android:layout_height="100dp"
                                     android:background="@drawable/btn_pressed"
                                     android:layout_margin="10dp"
-                                    android:text="ROOM 05"
+                                    android:text="+"
                                     android:textSize="20dp"
-                                    android:textStyle="bold"/>
+                                    android:textStyle="bold"
+                                    android:onClick="onClickRoom"/>
 
                                 <Button
                                     android:id="@+id/btn_room12"
@@ -184,9 +189,10 @@
                                     android:layout_height="100dp"
                                     android:background="@drawable/btn_pressed"
                                     android:layout_margin="10dp"
-                                    android:text="ROOM 06"
+                                    android:text="+"
                                     android:textSize="20dp"
-                                    android:textStyle="bold"/>
+                                    android:textStyle="bold"
+                                    android:onClick="onClickRoom"/>
 
 
 
@@ -257,9 +263,10 @@
                                     android:layout_height="80dp"
                                     android:background="@drawable/btn_pressed"
                                     android:layout_margin="10dp"
-                                    android:text="FAN"
+                                    android:text="+"
                                     android:textSize="14dp"
                                     android:textStyle="bold"
+                                    android:onClick="onClickController"
                                     />
 
                                 <Button
@@ -268,9 +275,10 @@
                                     android:layout_height="80dp"
                                     android:background="@drawable/btn_pressed"
                                     android:layout_margin="10dp"
-                                    android:text="Light"
+                                    android:text="+"
                                     android:textSize="14dp"
                                     android:textStyle="bold"
+                                    android:onClick="onClickController"
                                     />
 
 
@@ -280,9 +288,10 @@
                                     android:layout_height="80dp"
                                     android:background="@drawable/btn_pressed"
                                     android:layout_margin="10dp"
-                                    android:text="light2"
+                                    android:text="+"
                                     android:textSize="14dp"
                                     android:textStyle="bold"
+                                    android:onClick="onClickController"
                                     />
 
                                 <Button
@@ -291,9 +300,10 @@
                                     android:layout_height="80dp"
                                     android:background="@drawable/btn_pressed"
                                     android:layout_margin="10dp"
-                                    android:text="light3"
+                                    android:text="+"
                                     android:textSize="14dp"
                                     android:textStyle="bold"
+                                    android:onClick="onClickController"
                                     />
 
 
@@ -328,8 +338,9 @@
                                     android:background="@drawable/btn_pressed"
                                     android:layout_margin="10dp"
                                     android:textSize="14dp"
-                                    android:text="TV"
+                                    android:text="+"
                                     android:textStyle="bold"
+                                    android:onClick="onClickController"
                                     />
 
                                 <Button
@@ -340,8 +351,9 @@
                                     android:background="@drawable/btn_pressed"
                                     android:layout_margin="10dp"
                                     android:textSize="14dp"
-                                    android:text="fridge"
+                                    android:text="+"
                                     android:textStyle="bold"
+                                    android:onClick="onClickController"
                                     />
 
 
@@ -352,8 +364,9 @@
                                     android:background="@drawable/btn_pressed"
                                     android:layout_margin="10dp"
                                     android:textSize="14dp"
-                                    android:text="AC"
+                                    android:text="+"
                                     android:textStyle="bold"
+                                    android:onClick="onClickController"
                                     />
 
                                 <Button
@@ -363,8 +376,9 @@
                                     android:background="@drawable/btn_pressed"
                                     android:layout_margin="10dp"
                                     android:textSize="14dp"
-                                    android:text="RADIO"
+                                    android:text="+"
                                     android:textStyle="bold"
+                                    android:onClick="onClickController"
                                     />
 
 

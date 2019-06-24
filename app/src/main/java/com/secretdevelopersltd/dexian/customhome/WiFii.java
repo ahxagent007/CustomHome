@@ -32,7 +32,7 @@ public class WiFii {
 
     }
 
-    private void sendCommand(String command){
+    public void sendCommand(String command){
 
         Command = command;
 
